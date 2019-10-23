@@ -8,6 +8,7 @@ from .exceptions import (
         PressuresNotFound)
 from forest import (
         gridded_forecast,
+        mule_api,
         unified_model,
         eida50,
         rdt)
@@ -64,6 +65,9 @@ class FileSystem(object):
         elif file_type.lower() == 'griddedforecast':
             # XXX This needs a "Group" object ... not "paths"
             return gridded_forecast.Navigator(paths)
+        elif file_type.lower() == 'mule':
+            # XXX This needs a "Group" object ... not "paths"
+            return mule_api.Navigator(paths)
         elif file_type.lower() == "unified_model":
             coordinates = unified_model.Coordinates()
         else:

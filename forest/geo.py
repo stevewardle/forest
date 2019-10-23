@@ -18,6 +18,7 @@ def stretch_image(lons, lats, values):
     image = stretch_y(gy)(values)
     x = gx.min()
     y = gy.min()
+
     dw = gx[-1] - gx[0]
     dh = gy[-1] - gy[0]
     return {

@@ -26,6 +26,7 @@ from forest import (
         db,
         earth_networks,
         gridded_forecast,
+        mule_api,
         unified_model,
         rdt,
         satellite)
@@ -141,6 +142,8 @@ class Loader(object):
             return satellite.EIDA50(pattern)
         elif file_type == 'griddedforecast':
             return gridded_forecast.ImageLoader(label, pattern)
+        elif file_type == 'mule':
+            return mule_api.ImageLoader(label, pattern)        
         elif file_type == 'unifiedmodel':
             return data.DBLoader(label, pattern, locator)
         else:
